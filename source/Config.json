@@ -1,0 +1,32 @@
+{
+  "identifier": "com.nousresearch.popclip.deepseek",
+  "name": "DeepSeek AI",
+  "icon": "iconify:logos:openai-icon",
+  "module": "deepseek.js",
+  "description": "翻译、改写、总结、语法修正 — 由 DeepSeek AI 驱动",
+  "entitlements": ["network"],
+  "popclipVersion": 4586,
+  "options": [
+    {
+      "identifier": "apikey",
+      "label": "API Key",
+      "type": "string",
+      "description": "在 platform.deepseek.com 获取的 API Key",
+      "textConfig": { "type": "secure", "placeholderText": "sk-..." }
+    },
+    {
+      "identifier": "baseUrl",
+      "label": "API Base URL",
+      "type": "string",
+      "description": "默认 api.deepseek.com/v1，如用中转代理请修改",
+      "defaultValue": "api.deepseek.com/v1"
+    },
+    {
+      "identifier": "model",
+      "label": "Model",
+      "type": "string",
+      "description": "模型名称，如 deepseek-chat、deepseek-v4-flash",
+      "defaultValue": "deepseek-chat"
+    }
+  ]
+}
