@@ -74,11 +74,14 @@ const prompt = {
   title: "问答",
   after: "preview-result",
   code: async (input, options) => {
-    return await callDeepSeek(
+    const result = await callDeepSeek(
       input.text,
       SYSTEM_PROMPTS.prompt,
       options
     );
+    // 尝试粘贴（如果光标在输入框内就粘贴进去，否则忽略）
+    try { popclip.pasteText(result); } catch(e) { /* 非输入框，忽略 */ }
+    return result;
   },
 };
 
