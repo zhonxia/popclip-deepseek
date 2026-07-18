@@ -72,7 +72,7 @@ const grammar = {
 const prompt = {
   icon: "symbol:wand.and.stars",
   title: "问答",
-  after: "paste-result",
+  after: "preview-result",
   code: async (input, options) => {
     return await callDeepSeek(
       input.text,
