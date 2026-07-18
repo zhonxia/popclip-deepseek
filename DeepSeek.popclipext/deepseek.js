@@ -72,21 +72,13 @@ const grammar = {
 const prompt = {
   icon: "symbol:wand.and.stars",
   title: "问答",
-  after: "preview-result",
+  after: "paste-result",
   code: async (input, options) => {
-    try {
-      const result = await callDeepSeek(
-        input.text,
-        SYSTEM_PROMPTS.prompt,
-        options
-      );
-      popclip.showText(result);
-      popclip.pasteText(result);
-      return result;
-    } catch (error) {
-      popclip.showText("错误: " + error.message);
-      throw error;
-    }
+    return await callDeepSeek(
+      input.text,
+      SYSTEM_PROMPTS.prompt,
+      options
+    );
   },
 };
 
